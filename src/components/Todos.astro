@@ -59,7 +59,7 @@ fetch('https://jsonplaceholder.typicode.com/photos')
   .then(photos => {
     const container = document.querySelector('#image-container');
     let count = 1
-    photos.slice(0, 100).forEach(photo => {
+    photos.slice(0, 50).forEach(photo => {
       const img = document.createElement('img');
       img.src = photo.url;
       img.alt = `${photo.title} + ${count}`;
