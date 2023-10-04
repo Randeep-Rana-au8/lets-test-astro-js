@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Todos from '../components/Todos.astro';
 import Container from '../components/Container';
-import Loader from '../components/Loader.astro';
+import Loader from '../components/Loader.jsx';
 
 let isLoading = true;
 
@@ -11,24 +11,17 @@ const handleUpdate = (isCompleted) => {
   isLoading = !isCompleted;
 };
 
-console.log('astro ssr component', handleUpdate)
-
+console.log('astro ssr component', handleUpdate);
 ---
 
 <Layout title='Rana Club'>
   <main>
-    {
-      isLoading ? (
-        <Loader />
-      ) : (
-        <div>
-          <h1>
-            I am <span class='text-gradient'>Randeep Rana.</span>
-          </h1>
-          <p class='text-gradient-2'>Tech Hunter</p>
-        </div>
-      )
-    }
+    <div>
+      <h1>
+        I am <span class='text-gradient'>Randeep Rana.</span>
+      </h1>
+      <p class='text-gradient-2'>Tech Hunter</p>
+    </div>
   </main>
   <Container client:load onUpdate={(e) => handleUpdate(e)} />
   <Todos />
