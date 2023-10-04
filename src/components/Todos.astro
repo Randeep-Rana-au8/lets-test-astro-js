@@ -54,17 +54,17 @@ function renderTasks() {
   });
 }
 
-fetch('https://jsonplaceholder.typicode.com/photos')
-  .then(response => response.json())
-  .then(photos => {
-    const container = document.querySelector('#image-container');
-    let count = 1
-    photos.slice(0, 50).forEach(photo => {
-      const img = document.createElement('img');
-      img.src = photo.url;
-      img.alt = `${photo.title} + ${count}`;
-      count++;
-      container.appendChild(img);
-    });
-  });
+// fetch('https://jsonplaceholder.typicode.com/photos')
+//   .then(response => response.json())
+//   .then(photos => {
+//     const container = document.querySelector('#image-container');
+//     let count = 1
+//     photos.slice(0, 50).forEach(photo => {
+//       const img = document.createElement('img');
+//       img.src = photo.url;
+//       img.alt = `${photo.title} + ${count}`;
+//       count++;
+//       container.appendChild(img);
+//     });
+//   });
   </script>
